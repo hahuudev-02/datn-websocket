@@ -23,11 +23,8 @@ export class EventGateway
 {
   @WebSocketServer()
   server: Server;
-
   constructor(@InjectModel('Shift') private shiftModel: Model<any>) {}
-
   afterInit() {}
-
   @SubscribeMessage('booking-success')
   async handleMessage(
     @ConnectedSocket() socket: Socket,
